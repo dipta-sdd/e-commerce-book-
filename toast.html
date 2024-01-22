@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="script/script.js"></script>
+</head>
+
+<body>
+    <div class="spinner-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="full-site">
+        <div class="nav-div">
+            <nav class="navbar">
+
+                <ul class="nav-ul ml-auto" id="nav_ul">
+                    <li class="nav-li"><a class="nav-a" href="/">Home</a></li>
+                    <li class="nav-li"><a class="nav-a" href="/">Home</a></li>
+                    <li class="nav-li"><a class="nav-a" href="/">
+                            <i class="fa-solid fa-cart-shopping" style="color: #FFFFFF;"></i>
+                            <small class="text-light rounded-5 cart-count2">10</small>
+                        </a>
+
+                    </li>
+                    <li class="nav-li" id="nav_login_li"><a class="nav-a" href="/" id="nav_login_btn">LOGIN</a></li>
+                    <li class="nav-li d-none" id="nav_profile_li">
+                        <a class="nav-a  nav-drop" href="/" id="nav_profile_btn"></a>
+                        <ul class="drop-ul">
+                            <div class="drop-li">
+                                <a class="drop-a" href="/profile">My Profile</a>
+                            </div>
+                            <div class="drop-li">
+                                <a class="drop-a" href="/edit_profile">Edit Profile</a>
+                            </div>
+                            <div class="drop-li" id="nav_myOrder_btn">
+                                <a class="drop-a">My Order</a>
+                            </div>
+                            <!-- only for library or publication -->
+                            <div class="drop-li d-none" id="nav_myItem_btn">
+                                <a class="drop-a" href="/my_item">My Books</a>
+                            </div>
+                            <div class="drop-li d-none" id="nav_addItem_btn">
+                                <a class="drop-a" href="/add_item">Add new book</a>
+                            </div>
+
+                            <div class="drop-li">
+                                <a class="drop-a" id="nav_logout_btn">Logout</a>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-xl-2 col-md-3 px-0"> -->
+                
+                    <div class="sidebar">
+                        <a class="sidebar-option-active" link=""> Home</a>
+                        <a class="sidebar-option" link="cart"> Cart <small
+                                class="bg-primary text-light rounded-5 cart-count">10</small></a>
+                        <a class="sidebar-option" link="publication">Publication</a>
+                        
+                        <bold class="sidebar-head"> Catagoris</bold>
+                    </div>
+                
+
+
+
+                <div class="col body p-3">
+                    <!-- <div class="body"> -->
+                    <!-- head end -->
+                    <div class="books-card-container">
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class='grid-item'>
+                            <div class="card-container">
+                                <div class="img-container">
+                                    <img src="./img/background.jpg" alt="" class="book-cover-img" />
+                                </div>
+                                <p class="book-name">Database System</p>
+                                <p class="book-price">TK. 500</p>
+                                <button class='btn-add-cart'>
+                                    <BsCartPlus size={15} />
+                                    Add to Cart
+                                </button>
+                                <button class='btn-buy'>
+                                    <BsCartDash size={15} />
+                                    Buy Now
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- login popup -->
+                <div class="login-popup d-none" id="login_pop">
+                    <div class="login-body center">
+                        <div class="login-body-2">
+                            <div class="row login-body-3">
+
+                                <div class="col-11"></div>
+                                <div class="col-1 pb-3" id="login_pop_close_btn"><i class="fa-solid fa-xmark"
+                                        style="color: #000000;"></i></div>
+
+                                <div class="login-head col-6 p-2" id="login_pop_head">LOGIN</div>
+                                <div class="login-head col-6 p-2 login-pop-head-inact" id="signup_pop_head">SIGNUP</div>
+
+                                <div class="col-12 login-div text-start" id="login_div">
+                                    <div class="form-group pt-2">
+                                        <label for="">Email</label>
+                                        <input type="email" class="form-control" name="email" id="login_email"
+                                            aria-describedby="emailHelpId" placeholder="">
+                                        <!-- <small class="text-danger">Please provide a valid city.</small> -->
+                                    </div>
+                                    <div class="form-group pt-2">
+                                        <label for="">Password</label>
+                                        <input type="password" class="form-control" name="password" id="login_pass"
+                                            placeholder="">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100 mt-3"
+                                        id="login_submit">LOGIN</button>
+                                </div>
+
+                                <div class="col-12 login-div text-start d-none" id="signup_div">
+                                    <form id="signup_form">
+                                        <div class="form-group py-2">
+                                            <label for="">Role</label><label class="text-danger">*</label>
+                                            <select class="form-control" name="role" id="signup_role">
+                                                <option value="buyer">Buyer</option>
+                                                <option value="seller">seller</option>
+                                                <option value="admin">admin</option>
+                                                <option value="publication">Publication</option>
+                                                <option value="library">Library</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group pt-2">
+                                            <label for="">Name</label>
+                                            <label class="text-danger">*</label>
+                                            <input type="text" class="form-control" name="name" id="signup_name"
+                                                aria-describedby="emailHelpId" placeholder="Sankarsan Das">
+                                            <small class="text-danger" id="signup_name_err"></small>
+                                        </div>
+                                        <div class="form-group pt-2">
+                                            <label for="">Email</label>
+                                            <label class="text-danger">*</label>
+                                            <input type="email" class="form-control" name="email" id="signup_email"
+                                                aria-describedby="emailHelpId" placeholder="email@email.com">
+                                            <small class="text-danger" id="signup_email_err"></small>
+                                        </div>
+                                        <div class="form-group pt-2">
+                                            <label for="">Password</label><label class="text-danger">*</label>
+                                            <input type="password" class="form-control" name="password" id="signup_pass"
+                                                placeholder="********">
+                                            <small class="text-danger" id="signup_pass_err"></small>
+                                        </div>
+                                        <div class="form-group pt-2">
+                                            <label for="">Confirm Password</label><label class="text-danger">*</label>
+                                            <input type="password" class="form-control" name="password_c"
+                                                id="signup_pass_c" placeholder="********">
+                                            <small class="text-danger" id="signup_pass_c_err"></small>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100 mt-3"
+                                            id="signup_submit">SIGNUP</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+</body>
+<script>
+    $(document).ready(function () {
+        // manage catagory
+        $.ajax({ url: 'http://127.0.0.1:8000/api/v1/book/genre', method: 'GET' }).done(function (response) {
+            /* Handle response */
+            var genres = response.genres;
+            // console.log(genres);
+            $.map(genres, function (elementOrValue, indexOrKey) {
+                $('.sidebar').append(`
+                    <div class="sidebar-option" link="genre?=${elementOrValue.name}">${elementOrValue.name}</div>
+                `);
+                // console.log(elementOrValue);
+            });
+        });
+        // manage login status
+        console.log(current_user());
+        let user = current_user();
+        if (user) {
+            $(nav_profile_btn).html(`
+                ${user.name} <span class="badge rounded-pill text-bg-info">${user.role}</span>
+            `);
+            $(nav_profile_btn).prepend('<i class="fa-solid fa-user pe-2" style="color: #FFFFFF;"></i>');
+            // hide login
+            $(nav_login_li).addClass('d-none');
+            // show profile btn
+            $(nav_profile_li).removeClass("d-none");
+            if (user.role == 'library' || user.role == 'publication') {
+                activeLibrary();
+            }
+            hideSpinner();
+        }
+        else {
+            hideSpinner();
+        }
+
+
+
+
+        // manage login
+        $(nav_login_btn).click(function (e) {
+            e.preventDefault();
+            $(login_pop).removeClass('d-none');
+        });
+        $(login_pop_close_btn).click(function (e) {
+            e.preventDefault();
+            $(login_pop).addClass('d-none');
+        });
+        $(login_submit).click(function (e) {
+            e.preventDefault();
+            var data = {
+                email: "sdd@gmail.com",
+                password: "12345678"
+            };
+            $.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:8000/api/v1/auth/login",
+                data: JSON.stringify({
+                    email: $(login_email).val(),
+                    password: $(login_pass).val()
+                }),
+                contentType: "application/json",
+                success: function (response) {
+                    // save token on cookie
+                    setCookie("token", response.token, 3);
+                    console.log(response.user);
+                    let role = response.user.role;
+                    $(nav_profile_btn).html(`
+                    ${response.user.name} <span class="badge rounded-pill text-bg-info">${response.user.role}</span>
+                      `);
+                    $(nav_profile_btn).prepend('<i class="fa-solid fa-user pe-2" style="color: #ffffff;"></i>');
+                    // hide login
+                    $(nav_login_li).addClass('d-none');
+                    // show profile btn
+                    $(nav_profile_li).removeClass("d-none");
+
+                    if (role == 'library' || role == 'publication') {
+                        activeLibrary();
+                    }
+
+                    $(login_pop).addClass('d-none');
+
+                }
+            });
+        });
+
+        // signup head click
+        $(signup_pop_head).click(function (e) {
+            e.preventDefault();
+            $(login_div).addClass('d-none ');
+            $(signup_div).removeClass('d-none ');
+            $(signup_pop_head).removeClass('login-pop-head-inact');
+            $(login_pop_head).addClass('login-pop-head-inact');
+        });
+
+        // login head click
+        $(login_pop_head).click(function (e) {
+            e.preventDefault();
+            $(signup_div).addClass('d-none ');
+            $(login_div).removeClass('d-none ');
+            $(login_pop_head).removeClass('login-pop-head-inact');
+            $(signup_pop_head).addClass('login-pop-head-inact');
+        });
+
+
+
+        // manage logout
+        $(nav_logout_btn).click(function (e) {
+            e.preventDefault();
+            deleteCookie('token');
+            location.replace('/');
+            $(nav_profile_li).addClass('d-none');
+            // show profile btn
+            $(nav_login_li).removeClass("d-none");
+        });
+
+        // manage signup
+        $(signup_form).click(function (e) {
+            e.preventDefault();
+            var pass2 = $(signup_pass_c).val();
+            var form_data = {
+                role: $(signup_role).val(),
+                name: $(signup_name).val(),
+                email: $(signup_email).val(),
+                pass: $(signup_pass).val()
+            };
+            if (form_data.name == '') {
+                $(signup_name).addClass('is-invalid');
+                $(signup_name_err).text("Please input valid name.");
+            } else {
+                $(signup_name).removeClass('is-invalid');
+                $(signup_name_err).text("");
+            }
+            if (form_data.email == '') {
+                $(signup_email).addClass('is-invalid');
+                $(signup_email_err).text("Please input valid email.");
+            } else {
+                $(signup_email).removeClass('is-invalid');
+                $(signup_email_err).text("");
+            }
+            if (form_data.pass == '') {
+                $(signup_pass).addClass('is-invalid');
+                $(signup_pass_err).text("Please input valid pass.");
+            } else {
+                $(signup_pass).removeClass('is-invalid');
+                $(signup_pass_err).text("");
+            }
+            if (pass2 == '') {
+                $(signup_pass_c).addClass('is-invalid');
+                $(signup_pass_c_err).text("Please input valid pass.");
+            } else {
+                $(signup_pass_c).removeClass('is-invalid');
+                $(signup_pass_c_err).text("");
+                if (pass2 === form_data.pass) {
+                    $(signup_pass_c).removeClass('is-invalid');
+                    $(signup_pass_c_err).text("");
+                } else {
+                    $(signup_pass_c).addClass('is-invalid');
+                    $(signup_pass_c_err).text("Password didnot match.");
+                }
+            }
+
+
+            console.log(form_data);
+        });
+
+        // manage sidebar click
+        $(document).on('click', '.sidebar-option', function (e) {
+            var link = $(this).attr('link');
+            location.replace('./' + link);
+        });
+
+
+        function activeLibrary() {
+            $(nav_myItem_btn).removeClass("d-none");
+            $(nav_addItem_btn).removeClass("d-none");
+            $(nav_myOrder_btn).addClass("d-none");
+        }
+        function deactiveLibrary() {
+            $(nav_myItem_btn).addClass("d-none");
+            $(nav_addItem_btn).addClass("d-none");
+            $(nav_myOrder_btn).removeClass("d-none");
+        }
+
+
+
+
+    });
+</script>
+
+</html>
