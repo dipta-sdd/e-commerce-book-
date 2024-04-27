@@ -1,30 +1,25 @@
 // spinner function
 // import { toast } from 'react-toastify';
 
-
-
-
-
 function showSpinner() {
-    $('.spinner').removeClass('d-none');
-    $('.spinner-overlay').removeClass('d-none');
+  $(".spinner").removeClass("d-none");
+  $(".spinner-overlay").removeClass("d-none");
 }
 
 function hideSpinner() {
-    $('.spinner').addClass('d-none');
-    $('.spinner-overlay').addClass('d-none');
+  $(".spinner").addClass("d-none");
+  $(".spinner-overlay").addClass("d-none");
 }
 
 // convert time
 function convertUTCToLocalTime(utcDateString) {
-    const utcDate = new Date(utcDateString);
-    const localTimeString = utcDate.toLocaleString(); // Converts UTC to local time
-    return localTimeString;
+  const utcDate = new Date(utcDateString);
+  const localTimeString = utcDate.toLocaleString(); // Converts UTC to local time
+  return localTimeString;
 }
 // toast
 function showToast(message) {
-
-    var toast = `
+  var toast = `
         <div class="toast-container position-fixed top-0 end-0 p-3 ">
             <div id="liveToast" class="toast fade hide" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header">
@@ -40,69 +35,70 @@ function showToast(message) {
         </div>
     `;
 
-    $('body').append(toast);
+  $("body").append(toast);
 
-    var newToast = $('.toast:last');
-    newToast.toast('show');
-    setTimeout(function () {
-        newToast.toast('hide');
-        newToast.remove(); // Remove the toast from the DOM after hiding
-    }, 3000);
+  var newToast = $(".toast:last");
+  newToast.toast("show");
+  setTimeout(function () {
+    newToast.toast("hide");
+    newToast.remove(); // Remove the toast from the DOM after hiding
+  }, 3000);
 }
 
 function loadSidebar(role) {
-    console.log('called');
-    // $(`u-user`).removeClass('d-none');
-    $(`.u-${role}`).removeClass('d-none');
+  console.log("called");
+  // $(`u-user`).removeClass('d-none');
+  $(`.u-${role}`).removeClass("d-none");
 }
 function sidebarActivate(link) {
-    var sidebarOption = $(`.sidebar-option[href="${link}"]`);
-    sidebarOption.removeClass('sidebar-option');
-    sidebarOption.addClass('sidebar-option-active');
+  var sidebarOption = $(`.sidebar-option[href="${link}"]`);
+  sidebarOption.removeClass("sidebar-option");
+  sidebarOption.addClass("sidebar-option-active");
 }
 // current user
 function current_user() {
-    let data = null;
-    $.ajax({
-        type: "GET",
-        async: false,
-        url: "./api/v1/auth/current-user",
-        headers: {
-            Authorization: 'Bearer ' + getCookie('token')
-        },
-        success: function (response) {
-            // console.log(response);
-            data = response.user;
-        }
-    });
-    return data;
+  let data = null;
+  $.ajax({
+    type: "GET",
+    async: false,
+    url: "bookhavenapi.sankarsan.xyz/api/v1/auth/current-user",
+    headers: {
+      Authorization: "Bearer " + getCookie("token"),
+    },
+    success: function (response) {
+      // console.log(response);
+      data = response.user;
+    },
+  });
+  return data;
 }
 
 // cookie functions
 
 function setCookie(cookieName, cookieValue, expirationDays) {
-    const date = new Date();
-    date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + date.toUTCString();
-    document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+  const date = new Date();
+  date.setTime(date.getTime() + expirationDays * 24 * 60 * 60 * 1000);
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
 }
 function getCookie(cookieName) {
-    const name = cookieName + "=";
-    const decodedCookie = decodeURIComponent(document.cookie);
-    const cookieArray = decodedCookie.split(';');
+  const name = cookieName + "=";
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const cookieArray = decodedCookie.split(";");
 
-    for (let i = 0; i < cookieArray.length; i++) {
-        let cookie = cookieArray[i];
-        while (cookie.charAt(0) === ' ') {
-            cookie = cookie.substring(1);
-        }
-        if (cookie.indexOf(name) === 0) {
-            return cookie.substring(name.length, cookie.length);
-        }
+  for (let i = 0; i < cookieArray.length; i++) {
+    let cookie = cookieArray[i];
+    while (cookie.charAt(0) === " ") {
+      cookie = cookie.substring(1);
     }
-    return null; // Return null if the cookie is not found
+    if (cookie.indexOf(name) === 0) {
+      return cookie.substring(name.length, cookie.length);
+    }
+  }
+  return null; // Return null if the cookie is not found
 }
 
 function deleteCookie(cookieName) {
-    document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  document.cookie =
+    cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
