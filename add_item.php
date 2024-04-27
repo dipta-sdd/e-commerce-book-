@@ -101,7 +101,7 @@
         
 
         // manage genre
-        $.ajax({ url: './api/v1/book/genre', method: 'GET' }).done(function (response) {
+        $.ajax({ url: 'bookhavenapi.sankarsan.xyz/api/v1/book/genre', method: 'GET' }).done(function (response) {
             var genres = response.genres;
             $.map(genres, function (genre, indexOrKey) {
                 $(bookGenre).append(`
@@ -156,7 +156,7 @@
                 $(err).addClass('d-none');
                     $.ajax({
                     type: "POST",
-                    url: `./api/v1/book/add`,
+                    url: `bookhavenapi.sankarsan.xyz/api/v1/book/add`,
                     headers: {
                         Authorization: 'Bearer '+getCookie('token')
                     },

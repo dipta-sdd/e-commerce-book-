@@ -49,7 +49,7 @@
         if(userRole == 'user'){
             $.ajax({
                 type: "POST",
-                url: "./api/v1/auth/get_detail&review",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/auth/get_detail&review",
                 data: JSON.stringify({
                     USERID : userId
                 }),
@@ -99,7 +99,7 @@
         }else {
             $.ajax({
                 type: "POST",
-                url: "./api/v1/auth/get_details",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/auth/get_details",
                 data: JSON.stringify({
                     USERID : userId
                 }),
@@ -150,7 +150,7 @@
             } 
             $.ajax({
                 type: "POST",
-                url: "./api/v1/auth/postReview",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/auth/postReview",
                 data: JSON.stringify({
                     USERID : userId,
                     rating : rate,

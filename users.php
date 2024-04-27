@@ -77,7 +77,7 @@
         function loadUsers(){
             $.ajax({
                 type: "POST",
-                url: "./api/v1/admin/users",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/admin/users",
                 data: JSON.stringify({
                     name: $('#name').val(),
                     filter:$(selectCondition).val()

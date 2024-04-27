@@ -26,7 +26,7 @@
         if(userRole == 'user'){
             $.ajax({
                 type: "POST",
-                url: "./api/v1/order/find",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/order/find",
                 data:JSON.stringify({
                     orderId : orderId
                 }),
@@ -129,7 +129,7 @@
             var amount = $(this).attr('amount');
             $.ajax({
                 type: "POST",
-                url: "./api/v1/order/payment",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/order/payment",
                 data:JSON.stringify({
                     orderId : orderId,
                     amount : amount,

@@ -24,7 +24,7 @@
         if(userRole == 'user'){
             $.ajax({
                 type: "POST",
-                url: "./api/v1/order/my_order",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/order/my_order",
                 data:JSON.stringify({
                     filter :''
                 }),
@@ -109,8 +109,8 @@
         }else if(userRole == 'library' || userRole == 'seller' || userRole == 'publication' ){
             $.ajax({
                 type: "POST",
-                // url: "./api/v1/order/my_order/vendor",
-                url: "./api/v1/vendor/myOrder/",
+                // url: "bookhavenapi.sankarsan.xyz/api/v1/order/my_order/vendor",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/vendor/myOrder/",
                 data:JSON.stringify({
                     filter :''
                 }),
@@ -176,7 +176,7 @@
                 };
             $.ajax({
                 type: "POST",
-                url: "./api/v1/vendor/sell",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/vendor/sell",
                 data: JSON.stringify(data),
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')

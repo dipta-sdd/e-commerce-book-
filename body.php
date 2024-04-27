@@ -152,7 +152,7 @@
             };
             $.ajax({
                 type: "POST",
-                url: "./api/v1/auth/login",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/auth/login",
                 data: JSON.stringify({
                     email: $(login_email).val(),
                     password: $(login_pass).val()
@@ -262,7 +262,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "./api/v1/auth/signup",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/auth/signup",
                 data: JSON.stringify(form_data),
                 contentType: "application/json",
                 success: function (response) {

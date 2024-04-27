@@ -23,7 +23,7 @@
         if(userRole == 'admin'){
             $.ajax({
                 type: "POST",
-                url: "./api/v1/admin/findOrder",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/admin/findOrder",
                 data:JSON.stringify({
                     filter :'Processing'
                 }),
@@ -101,7 +101,7 @@
                 };
             $.ajax({
                 type: "POST",
-                url: "./api/v1/admin/approveOrder",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/admin/approveOrder",
                 data: JSON.stringify(data),
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')
@@ -124,7 +124,7 @@
                 };
             $.ajax({
                 type: "POST",
-                url: "./api/v1/admin/orderStatus",
+                url: "bookhavenapi.sankarsan.xyz/api/v1/admin/orderStatus",
                 data: JSON.stringify(data),
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')

@@ -93,7 +93,7 @@
                 $(divAlert).addClass('d-none');
                 $.ajax({
                     type: "POST",
-                    url: "./api/v1/auth/pass",
+                    url: "bookhavenapi.sankarsan.xyz/api/v1/auth/pass",
                     data: JSON.stringify(data),
                     headers: {
                         Authorization: 'Bearer '+getCookie('token')
