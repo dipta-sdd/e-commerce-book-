@@ -88,7 +88,7 @@
             }
             $.ajax({
                 type: "POST",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/transaction/request",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/transaction/request",
                 data: JSON.stringify(data),
                 contentType: "application/json",
                 headers: {
@@ -109,7 +109,7 @@
 
         $.ajax({
             type: "POST",
-            url: "bookhavenapi.sankarsan.xyz/api/v1/transaction/history",
+            url: "https://bookhavenapi.sankarsan.xyz/api/v1/transaction/history",
             contentType: "application/json",
             headers: {
                 Authorization: 'Bearer '+getCookie('token')

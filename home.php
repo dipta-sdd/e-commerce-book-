@@ -50,7 +50,7 @@
             };
             $.ajax({
                 type: "POST",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/book/search",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/book/search",
                 data: JSON.stringify(formdata),
                 contentType: "application/json",
                 success: function (response) {
@@ -123,7 +123,7 @@
                 }
                 $.ajax({
                     type: "POST",
-                    url: "bookhavenapi.sankarsan.xyz/api/v1/auth/cart",
+                    url: "https://bookhavenapi.sankarsan.xyz/api/v1/auth/cart",
                     headers: {
                         Authorization: 'Bearer '+getCookie('token')
                     },
@@ -150,7 +150,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "bookhavenapi.sankarsan.xyz/api/v1/order/checkout2",
+                    url: "https://bookhavenapi.sankarsan.xyz/api/v1/order/checkout2",
                     headers: {
                         Authorization: 'Bearer '+getCookie('token')
                     },

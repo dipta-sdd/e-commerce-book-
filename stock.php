@@ -67,7 +67,7 @@
             }
             $.ajax({
                 type: "POST",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/book/stock",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/book/stock",
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')
                 },

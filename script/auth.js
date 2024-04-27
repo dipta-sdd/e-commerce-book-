@@ -3,7 +3,7 @@ function current_user() {
   $.ajax({
     type: "GET",
     async: false,
-    url: "bookhavenapi.sankarsan.xyz/api/v1/auth/current-user",
+    url: "https://bookhavenapi.sankarsan.xyz/api/v1/auth/current-user",
     headers: {
       Authorization: "Bearer " + getCookie("token"),
     },

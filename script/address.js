@@ -183,7 +183,7 @@ $(document).on("click", ".submitAddress", function (e) {
   if (address) {
     $.ajax({
       type: "POST",
-      url: "bookhavenapi.sankarsan.xyz/api/v1/order/address",
+      url: "https://bookhavenapi.sankarsan.xyz/api/v1/order/address",
       data: JSON.stringify({
         orderId: orderId,
         address: address,

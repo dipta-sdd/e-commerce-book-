@@ -42,7 +42,7 @@
         // load cart
         $.ajax({
             type: "POST",
-            url: "bookhavenapi.sankarsan.xyz/api/v1/auth/cart_list",
+            url: "https://bookhavenapi.sankarsan.xyz/api/v1/auth/cart_list",
             headers: {
                 Authorization: 'Bearer '+getCookie('token')
             },
@@ -96,7 +96,7 @@
             }
             $.ajax({
                 type: "POST",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/auth/cart",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/auth/cart",
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')
                 },
@@ -130,7 +130,7 @@
             }
             $.ajax({
                 type: "POST",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/auth/cart",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/auth/cart",
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')
                 },
@@ -168,7 +168,7 @@
             }
             $.ajax({
                 type: "POST",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/auth/cart",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/auth/cart",
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')
                 },
@@ -214,7 +214,7 @@
             // console.log(order);
             $.ajax({
                 type: "POST",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/order/checkout",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/order/checkout",
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')
                 },

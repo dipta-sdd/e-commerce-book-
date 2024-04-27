@@ -50,7 +50,7 @@
         if(userRole == 'seller' || userRole == 'library' || userRole == 'publication' ){
             $.ajax({
                 type: "GET",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/vendor/dashboard2",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/vendor/dashboard2",
                 contentType: "application/json",
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')
@@ -78,7 +78,7 @@
             });
             $.ajax({
                 type: "GET",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/vendor/dashboard",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/vendor/dashboard",
                 contentType: "application/json",
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')
@@ -100,7 +100,7 @@
         else if(userRole == 'admin'){
             $.ajax({
                 type: "GET",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/admin/dashboard",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/admin/dashboard",
                 contentType: "application/json",
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')
@@ -122,7 +122,7 @@
             });
             $.ajax({
                 type: "GET",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/admin/dashboard3",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/admin/dashboard3",
                 contentType: "application/json",
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')
@@ -143,7 +143,7 @@
             });
             $.ajax({
                 type: "GET",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/admin/dashboard2",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/admin/dashboard2",
                 contentType: "application/json",
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')

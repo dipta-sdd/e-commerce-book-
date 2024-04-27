@@ -104,7 +104,7 @@
         }
         
         // manage genre
-        $.ajax({ url: 'bookhavenapi.sankarsan.xyz/api/v1/book/genre', method: 'GET' }).done(function (response) {
+        $.ajax({ url: 'https://bookhavenapi.sankarsan.xyz/api/v1/book/genre', method: 'GET' }).done(function (response) {
             var genres = response.genres;
             $.map(genres, function (genre, indexOrKey) {
                 $(bookGenre).append(`
@@ -115,7 +115,7 @@
         // preview
         $.ajax({
             type: "POST",
-            url: "bookhavenapi.sankarsan.xyz/api/v1/book/get_details",
+            url: "https://bookhavenapi.sankarsan.xyz/api/v1/book/get_details",
             data: JSON.stringify({
                 bookId : bookId
             }),
@@ -177,7 +177,7 @@
                 $(err).addClass('d-none');
                     $.ajax({
                     type: "POST",
-                    url: `bookhavenapi.sankarsan.xyz/api/v1/book/edit`,
+                    url: `https://bookhavenapi.sankarsan.xyz/api/v1/book/edit`,
                     headers: {
                         Authorization: 'Bearer '+getCookie('token')
                     },

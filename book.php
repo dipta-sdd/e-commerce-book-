@@ -45,7 +45,7 @@
         if(userRole == 'user'){
             $.ajax({
                 type: "POST",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/book/get_detail&review",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/book/get_detail&review",
                 data: JSON.stringify({
                     bookId : bookId
                 }),
@@ -117,7 +117,7 @@
         }else {
             $.ajax({
                 type: "POST",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/book/get_details",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/book/get_details",
                 data: JSON.stringify({
                     bookId : bookId
                 }),
@@ -190,7 +190,7 @@
             console.log(bookId)
             $.ajax({
                 type: "POST",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/book/postReview",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/book/postReview",
                 data: JSON.stringify({
                     bookId : bookId,
                     rating : rate,
@@ -229,7 +229,7 @@
                 }
                 $.ajax({
                     type: "POST",
-                    url: "bookhavenapi.sankarsan.xyz/api/v1/auth/cart",
+                    url: "https://bookhavenapi.sankarsan.xyz/api/v1/auth/cart",
                     headers: {
                         Authorization: 'Bearer '+getCookie('token')
                     },

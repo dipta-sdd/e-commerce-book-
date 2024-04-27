@@ -73,7 +73,7 @@
             };
             $.ajax({
                 type: "POST",
-                url: "bookhavenapi.sankarsan.xyz/api/v1/auth/update-user",
+                url: "https://bookhavenapi.sankarsan.xyz/api/v1/auth/update-user",
                 headers: {
                     Authorization: 'Bearer '+getCookie('token')
                 },
